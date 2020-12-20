@@ -1,0 +1,4 @@
+<RCC>
+    <qresource prefix="/new/reports"/>
+    <qresource prefix="/"/>
+</RCC>

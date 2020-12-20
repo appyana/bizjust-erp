@@ -1,0 +1,299 @@
+/*QGroupBox公用属性设置*/
+ QGroupBox {
+     background: none;/*背景透明*/
+     border: 1px solid #aaaaaa;/*边框*/
+     border-radius: 5px;/*边框圆角*/
+     margin-top: 2ex; /* 为title绘制留出空间，以下title子控制器的subcontrol-origin设置为margin */
+ }
+
+/*QGroupBox title子控制器属性设置*/
+QGroupBox::title
+{
+        color:#3399ff;/*文本颜色*/
+        left:10px;/*子控制器相对于父控件的精确定位*/
+    subcontrol-origin: margin;/*子控制器绘制起始区域*/
+    subcontrol-position: top left; /*子控制器于父控件的相对位置*/
+    padding: 0px 2px;/*title文字左右padding设置使边框线条与title文字有间隔距离*/
+    background: none;/*背景透明*/
+ }
+
+/**************************************Scrollbar***********************************************/
+/*水平滚动条公用属性设置*/
+QScrollBar:horizontal
+{
+    border-top: 1px solid #aaaaaa;/*边框*/
+    /*background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #eeeeee, stop:0.8 #ffffff);渐变背景，也是滑轨背景*/
+    background:white;
+    height: 16px;/*水平滚动条高度*/
+    margin: 0px 16px 0 16px;/*水平滚动条margin，左右留出空间给add-line按钮和sub-line按钮*/
+}
+
+/*水平滚动条滑块公用属性设置*/
+QScrollBar::handle:horizontal
+{
+    /*background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #73c5f1, stop:0.6 #bde4f8, stop:1 #73c5f1);背景*/
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #ffffff, stop:0.8 #eeeeee);/*渐变背景色*/
+    min-width: 20px;/*最小宽度，滑块宽度自动调整但须设置一个最小宽度*/
+    border-radius: 0px;/**/
+    border-left:1px solid #aaaaaa;
+    border-right:1px solid #aaaaaa;
+}
+
+/*水平滚动条滑块被掠过时*/
+QScrollBar::handle:horizontal:hover
+{
+    /*background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #90d9fe, stop:0.6 #e2f3fc, stop:1 #90d9fe);渐变背景*/
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0.2 #eeeeee, stop:1 #ffffff);/*渐变背景色*/
+}
+
+/*水平滚动条滑块被按压时*/
+QScrollBar::handle:horizontal:pressed
+{
+    /*background: qlineargradient(x1:0, y1:0, x2:0, y2:1,  stop:0 #60c8fd, stop:0.6 #bde4f8, stop:1 #60c8fd);渐变背景*/
+   background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #ffffff, stop:0.8 #eeeeee);/*渐变背景色*/
+}
+
+/*水平滚动条sub-line（增加一行）按钮*/
+QScrollBar::add-line:horizontal
+{
+    border-top: 1px solid #aaaaaa;/*边框*/
+    border-left: 1px solid #aaaaaa;/*边框*/
+    border-right: 1px solid #aaaaaa;/*边框*/
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #ffffff, stop:0.8 #eeeeee);/*渐变背景*/
+    width: 16px;/*宽度，跟父控件margin匹配*/
+    subcontrol-position: right;/*sub-line按钮相对于父控件位置设置*/
+    subcontrol-origin: margin;/*sub-line按钮绘制空间，之前父控件设置了margin为sub-line留出了控件*/
+}
+
+/*水平滚动条add-line（增加一行）按钮被掠过时*/
+QScrollBar::add-line:horizontal:hover
+{
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0.4 #ffffff, stop:1 #eeeeee);/*渐变背景*/
+}
+
+/*水平滚动条add-line（增加一行）按钮被按压时*/
+QScrollBar::add-line:horizontal:pressed
+{
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #ffffff, stop:0.4 #eeeeee);/*渐变背景*/
+}
+
+/*水平滚动条sub-line（减少一行）按钮*/
+QScrollBar::sub-line:horizontal
+{
+    border-top: 1px solid #aaaaaa;/*边框*/
+    border-right: 1px solid #aaaaaa;/*边框*/
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #ffffff, stop:0.8 #eeeeee);/*渐变背景*/
+    width: 16px;/*宽度，跟父控件margin匹配*/
+    subcontrol-position: left;/*sub-line按钮相对于父控件位置设置*/
+    subcontrol-origin: margin;/*sub-line按钮绘制空间，之前父控件设置了margin为sub-line留出了控件*/
+}
+
+/*水平滚动条sub-line（减少一行）按钮hover时*/
+QScrollBar::sub-line:horizontal:hover
+{
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0.4 #ffffff, stop:1 #eeeeee);/*渐变背景*/
+}
+
+/*水平滚动条sub-line（减少一行）按钮被按压时*/
+QScrollBar::sub-line:horizontal:pressed
+{
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop:0 #ffffff, stop:0.4 #eeeeee);/*渐变背景*/
+}
+
+/*水平滚动条左箭头设置图像（在add-line中居中显示）*/
+QScrollBar:left-arrow:horizontal
+{
+    image:url(:/qss/Qss/icon/hor_scroll_left_arrow.png);/*箭头图像*/
+}
+
+/*水平滚动条右箭头设置图像（在sub-line中居中显示）*/
+QScrollBar::right-arrow:horizontal
+{
+        image:url(:/qss/Qss/icon/hor_scroll_right_arrow.png);/*箭头图像*/
+}
+
+/*水平滚动条add-page,sub-page指单击滑轨时滚动一页。可以为add-page,sub-page设置hover,pressed的背景 */
+QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal
+{
+     background: none;/*不设置add-page,sub-page背景*/
+}
+
+
+/*垂直滚动条，大同小异*/
+QScrollBar:vertical
+{
+    border-left: 1px solid #aaaaaa;
+    /*background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #eeeeee, stop:0.8 #ffffff);*/
+    background:white;
+    width: 16px;
+    margin: 16px 0px 16px 0px;
+}
+
+QScrollBar::handle:vertical
+{
+    /*background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #73c5f1, stop:0.6 #bde4f8, stop:1 #73c5f1);渐变背景色*/
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #ffffff, stop:0.8 #eeeeee);/*渐变背景色*/
+    min-height: 20px;
+    border-radius: 0px;
+    border-top:1px solid #aaaaaa;
+    border-bottom:1px solid #aaaaaa;
+}
+
+QScrollBar::handle:vertical:hover
+{
+    /*background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #90d9fe, stop:0.6 #e2f3fc, stop:1 #90d9fe);渐变背景*/
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0.2 #eeeeee, stop:1 #ffffff);/*渐变背景色*/
+}
+
+QScrollBar::handle:vertical:pressed
+{
+    /*background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #60c8fd, stop:0.6 #bde4f8, stop:1 #60c8fd);渐变背景色*/
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #ffffff, stop:0.8 #eeeeee);/*渐变背景色*/
+}
+
+QScrollBar::add-line:vertical
+{
+    border-left: 1px solid #aaaaaa;
+    border-top: 1px solid #aaaaaa;
+    border-bottom: 1px solid #aaaaaa;
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #ffffff, stop:0.8 #eeeeee);
+    height: 16px;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+
+QScrollBar::add-line:vertical:hover
+{
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0.4 #ffffff, stop:1 #eeeeee);
+}
+
+QScrollBar::add-line:vertical:pressed
+{
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #ffffff, stop:0.4 #eeeeee);
+}
+
+QScrollBar::sub-line:vertical
+{
+    border-left: 1px solid #aaaaaa;
+    border-bottom: 1px solid #aaaaaa;
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #ffffff, stop:0.8 #eeeeee);
+    height: 16px;
+    subcontrol-position: top;
+    subcontrol-origin: margin;
+}
+
+QScrollBar::sub-line:vertical:hover
+{
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0.4 #ffffff, stop:1 #eeeeee);
+}
+
+QScrollBar::sub-line:vertical:pressed
+{
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #ffffff, stop:0.4 #eeeeee);
+}
+
+
+QScrollBar::down-arrow:vertical
+{
+    image:url(:/qss/Qss/icon/ver_scroll_bottom_arrow.png);
+}
+
+QScrollBar::up-arrow:vertical
+{
+        image:url(:/qss/Qss/icon/ver_scroll_top_arrow.png);
+}
+
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical
+{
+        background: none;
+}
+
+/*
+一种更为简洁的滚动条
+QScrollBar:horizontal
+{
+    background: #f2f2f2;
+    height: 12px;
+}
+QScrollBar::handle:horizontal
+{
+    background: #dddddd;
+    min-width: 20px;
+    border-radius: 6px;
+}
+QScrollBar::handle:horizontal:hover
+{
+    background: #d0d0d0;
+}
+QScrollBar::handle:horizontal:pressed
+{
+    background: #d0d0d0;
+}
+
+QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal
+{
+   background: none;
+}
+QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal
+{
+     background: none;
+}
+QScrollBar:vertical
+{
+    background: #f2f2f2;
+    width: 12px;
+}
+QScrollBar::handle:vertical
+{
+    background: #dddddd;
+    min-height: 20px;
+    border-radius: 6px;
+}
+QScrollBar::handle:vertical:hover
+{
+    background: #d0d0d0;
+}
+QScrollBar::handle:vertical:pressed
+{
+    background: #d0d0d0;
+}
+
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical
+{
+   background: none;
+}
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical
+{
+     background: none;
+}
+*/
+QMenuBar
+{
+	font-size:16px;
+	/*color:#333333;
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #AED6F1, stop:1 #00BFFF);*/
+}
+/*QMenuBar::item:selected
+{
+	background-color: #00CCFF;
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #1E90FF, stop:1 #4169E1);
+	color: #FFFFFF;
+}*/
+QMenu
+{
+	font-size:16px;
+	/*background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #AED6F1, stop:1 #00BFFF);
+	color:#333333;
+	border: 1px solid #0099CC;*/
+}
+
+/*QMenu::item:selected
+{
+	background-color:#00CCFF;
+	background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 #1E90FF, stop:1 #4169E1);
+	color:#FFFFFF;
+}
+QToolBar
+{
+	background-color: #00BFFF;
+}*/

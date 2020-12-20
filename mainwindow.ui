@@ -1,0 +1,1109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="windowModality">
+   <enum>Qt::NonModal</enum>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1024</width>
+    <height>700</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1024</width>
+    <height>700</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Bizjust ERP</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="erpres.qrc">
+    <normaloff>:/Images/images/icon.png</normaloff>:/Images/images/icon.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <item row="0" column="0">
+     <widget class="QTabWidget" name="mainTabWidget">
+      <property name="font">
+       <font>
+        <pointsize>9</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="tabShape">
+       <enum>QTabWidget::Rounded</enum>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>18</width>
+        <height>18</height>
+       </size>
+      </property>
+      <property name="documentMode">
+       <bool>false</bool>
+      </property>
+      <property name="tabsClosable">
+       <bool>true</bool>
+      </property>
+      <property name="tabBarAutoHide">
+       <bool>false</bool>
+      </property>
+      <widget class="QWidget" name="tabhome">
+       <attribute name="icon">
+        <iconset resource="erpres.qrc">
+         <normaloff>:/Images/images/home.png</normaloff>:/Images/images/home.png</iconset>
+       </attribute>
+       <attribute name="title">
+        <string>Home</string>
+       </attribute>
+       <attribute name="toolTip">
+        <string>Home</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_4">
+        <item row="0" column="0">
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <widget class="QGroupBox" name="groupBox">
+            <property name="maximumSize">
+             <size>
+              <width>400</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="title">
+             <string>Customer Balance</string>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_2">
+             <item row="0" column="0">
+              <widget class="QTableWidget" name="balanceTable">
+               <property name="focusPolicy">
+                <enum>Qt::NoFocus</enum>
+               </property>
+               <property name="editTriggers">
+                <set>QAbstractItemView::NoEditTriggers</set>
+               </property>
+               <property name="selectionMode">
+                <enum>QAbstractItemView::NoSelection</enum>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="groupBox_2">
+            <property name="maximumSize">
+             <size>
+              <width>800</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="title">
+             <string>Out Standing Cheques</string>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_3">
+             <item row="0" column="0">
+              <widget class="QTableWidget" name="chequesTable">
+               <property name="focusPolicy">
+                <enum>Qt::NoFocus</enum>
+               </property>
+               <property name="editTriggers">
+                <set>QAbstractItemView::NoEditTriggers</set>
+               </property>
+               <property name="selectionMode">
+                <enum>QAbstractItemView::NoSelection</enum>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1024</width>
+     <height>27</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>0</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>12</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
+    </font>
+   </property>
+   <widget class="QMenu" name="menuSales">
+    <property name="toolTip">
+     <string>Sales</string>
+    </property>
+    <property name="title">
+     <string>Sales</string>
+    </property>
+    <widget class="QMenu" name="menuCustomers">
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="title">
+      <string>Customers</string>
+     </property>
+     <addaction name="actionAdd_Customer"/>
+     <addaction name="actionEdit_Customer"/>
+     <addaction name="actionCustomer_List"/>
+    </widget>
+    <widget class="QMenu" name="menuInvoices">
+     <property name="title">
+      <string>Invoices</string>
+     </property>
+     <addaction name="actionAdd_Sales_Invoice"/>
+     <addaction name="actionEdit_Sales_Invoice"/>
+     <addaction name="actionPrint_Sales_Invoice"/>
+    </widget>
+    <widget class="QMenu" name="menuSales_Return">
+     <property name="title">
+      <string>Sales Return</string>
+     </property>
+     <addaction name="actionAdd_Sales_Return"/>
+     <addaction name="actionEdit_Sales_Return"/>
+     <addaction name="actionPrint_Sales_Return"/>
+    </widget>
+    <widget class="QMenu" name="menuReceipts">
+     <property name="title">
+      <string>Receipts</string>
+     </property>
+     <addaction name="actionAdd_Customer_Receipt"/>
+     <addaction name="actionEdit_Customer_Receipt"/>
+     <addaction name="actionCustomer_Cash_Receipt"/>
+     <addaction name="actionEdit_Customer_Cash_Receipt"/>
+     <addaction name="actionCheque_Parchi_Encashed"/>
+     <addaction name="actionEdit_Cheque_Parchie_Encashed"/>
+    </widget>
+    <widget class="QMenu" name="menuReports">
+     <property name="title">
+      <string>Reports</string>
+     </property>
+     <addaction name="actionCustomer_Ledger"/>
+     <addaction name="actionAll_Customers_Sales_Recovery"/>
+     <addaction name="actionCustomers_Balance"/>
+     <addaction name="actionSummary_of_Invoices"/>
+     <addaction name="actionCustomer_Payment_Receipt_Report"/>
+     <addaction name="actionRecent_Customers"/>
+     <addaction name="actionOut_Standing_Cheque_Purchie"/>
+     <addaction name="actionSummary_of_Invoices_in_Detail"/>
+     <addaction name="actionCustomer_Wise_Encash_Payments"/>
+    </widget>
+    <widget class="QMenu" name="menuSales_Analysis">
+     <property name="title">
+      <string>Sales Analysis</string>
+     </property>
+     <addaction name="actionCustomer_Annual_Sale"/>
+     <addaction name="actionMonth_Wise_Sales_Chart"/>
+     <addaction name="actionCustomer_s_Item_Wise_Sale"/>
+     <addaction name="actionItem_s_Customer_Wise_Sale"/>
+     <addaction name="actionCustomer_Wise_Profit_Analysis"/>
+     <addaction name="actionItem_s_Month_Wise_Sales"/>
+     <addaction name="actionItems_Month_Wise_Sales_Purchases"/>
+     <addaction name="actionItem_Wise_Sales"/>
+     <addaction name="actionDay_Wise_Sales_Summary"/>
+     <addaction name="actionCustomer_Sales_Analysis"/>
+    </widget>
+    <widget class="QMenu" name="menuSetup">
+     <property name="title">
+      <string>Setup</string>
+     </property>
+     <addaction name="actionManage_Sales_Man"/>
+     <addaction name="actionManage_Carrier"/>
+     <addaction name="actionManage_Customer_Groups"/>
+     <addaction name="actionManage_Sales_Categories"/>
+     <addaction name="actionManage_Units"/>
+     <addaction name="actionAdd_Customer_Opening_Balance"/>
+     <addaction name="actionEdit_Customer_Opening_Balance"/>
+     <addaction name="actionAR_Standard_GL_Accounts"/>
+    </widget>
+    <addaction name="menuCustomers"/>
+    <addaction name="menuInvoices"/>
+    <addaction name="menuSales_Return"/>
+    <addaction name="menuReceipts"/>
+    <addaction name="menuReports"/>
+    <addaction name="menuSales_Analysis"/>
+    <addaction name="menuSetup"/>
+   </widget>
+   <widget class="QMenu" name="menuInventory">
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="title">
+     <string>Inventory</string>
+    </property>
+    <widget class="QMenu" name="menuItems">
+     <property name="title">
+      <string>Items</string>
+     </property>
+     <addaction name="actionAdd_New_Item"/>
+     <addaction name="actionEdit_Item"/>
+     <addaction name="actionItems_List"/>
+    </widget>
+    <widget class="QMenu" name="menuProcess">
+     <property name="title">
+      <string>Process</string>
+     </property>
+     <addaction name="actionStock_Adjustment"/>
+     <addaction name="actionEdit_Stock_Adjustment"/>
+     <addaction name="actionAdd_Initial_Stock"/>
+     <addaction name="actionEdit_Initial_Stock"/>
+    </widget>
+    <widget class="QMenu" name="menuInvReports">
+     <property name="title">
+      <string>Reports</string>
+     </property>
+     <addaction name="actionStock_Report"/>
+     <addaction name="actionLocation_Wise_Stock"/>
+     <addaction name="actionStock_Report_Selling_Price"/>
+     <addaction name="actionStock_Report_Purchase_Price"/>
+     <addaction name="actionItem_Ledger"/>
+    </widget>
+    <widget class="QMenu" name="menuSetupInv">
+     <property name="title">
+      <string>Setup</string>
+     </property>
+     <addaction name="actionManage_Units_2"/>
+     <addaction name="actionManage_Locations"/>
+     <addaction name="actionManage_Item_Category"/>
+     <addaction name="actionManage_Item_Sub_Category"/>
+     <addaction name="actionManage_Item_Brands"/>
+     <addaction name="actionInvStandard_GL_Accounts"/>
+    </widget>
+    <addaction name="menuItems"/>
+    <addaction name="menuProcess"/>
+    <addaction name="menuInvReports"/>
+    <addaction name="menuSetupInv"/>
+   </widget>
+   <widget class="QMenu" name="menuPurchases">
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="title">
+     <string>Purchases</string>
+    </property>
+    <widget class="QMenu" name="menuVendors">
+     <property name="title">
+      <string>Vendors</string>
+     </property>
+     <addaction name="actionAdd_Vendor"/>
+     <addaction name="actionEdit_Vendor"/>
+     <addaction name="actionVendors_List"/>
+    </widget>
+    <widget class="QMenu" name="menuPurchasing">
+     <property name="title">
+      <string>Purchasing</string>
+     </property>
+     <addaction name="actionAdd_Purchase_Invoice"/>
+     <addaction name="actionEdit_Purchase_Invoice"/>
+     <addaction name="actionAdd_Purchase_Return"/>
+     <addaction name="actionEdit_Purchase_Return"/>
+    </widget>
+    <widget class="QMenu" name="menuPayments">
+     <property name="title">
+      <string>Payments</string>
+     </property>
+     <addaction name="actionAdd_Vendor_Payment"/>
+     <addaction name="actionEdit_Vendor_Payment"/>
+    </widget>
+    <widget class="QMenu" name="menuReportsAP">
+     <property name="title">
+      <string>Reports</string>
+     </property>
+     <addaction name="actionVendor_Ledger"/>
+     <addaction name="actionPurchase_Invoices_List"/>
+     <addaction name="actionPurchase_Detail_Report"/>
+     <addaction name="actionItem_Wise_Purchases"/>
+     <addaction name="actionPurchase_Return_List"/>
+     <addaction name="actionVendors_Balance_Report"/>
+     <addaction name="actionVendor_Payment_Report"/>
+    </widget>
+    <widget class="QMenu" name="menuSetupAP">
+     <property name="title">
+      <string>Setup</string>
+     </property>
+     <addaction name="actionManage_Vendor_Groups"/>
+     <addaction name="actionAdd_Vendor_Opening_Balance"/>
+     <addaction name="actionEdit_Vendor_Opening_Balance"/>
+     <addaction name="actionAPStandard_GL_Accounts"/>
+    </widget>
+    <addaction name="menuVendors"/>
+    <addaction name="menuPurchasing"/>
+    <addaction name="menuPayments"/>
+    <addaction name="menuReportsAP"/>
+    <addaction name="menuSetupAP"/>
+   </widget>
+   <widget class="QMenu" name="menuLedger">
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="title">
+     <string>Ledger</string>
+    </property>
+    <widget class="QMenu" name="menuChart_of_Accounts">
+     <property name="title">
+      <string>Chart of Accounts</string>
+     </property>
+     <addaction name="actionAdd_GL_Account"/>
+     <addaction name="actionEdit_GL_Account"/>
+     <addaction name="actionChart_of_Accounts_List"/>
+    </widget>
+    <widget class="QMenu" name="menuJournal_Entries">
+     <property name="title">
+      <string>Journal Entries</string>
+     </property>
+     <addaction name="actionAdd_Cash_Receipt"/>
+     <addaction name="actionEdit_Cash_Receipt"/>
+     <addaction name="actionAdd_Cash_Payment"/>
+     <addaction name="actionEdit_Cash_Payment"/>
+     <addaction name="actionAdd_Journal_Voucher"/>
+     <addaction name="actionEdit_Journal_Voucher"/>
+    </widget>
+    <widget class="QMenu" name="menuReportsJV">
+     <property name="title">
+      <string>Reports</string>
+     </property>
+     <addaction name="actionAccount_Ledger"/>
+     <addaction name="actionDay_Book"/>
+     <addaction name="actionJournal_Reports"/>
+     <addaction name="actionAccounts_Balance_Summary"/>
+     <addaction name="actionTrial_Balance"/>
+     <addaction name="actionProfit_and_Loss"/>
+     <addaction name="actionBalance_Sheet"/>
+    </widget>
+    <widget class="QMenu" name="menuSetupJV">
+     <property name="title">
+      <string>Setup</string>
+     </property>
+     <addaction name="actionAdd_GL_Opening_Balance"/>
+     <addaction name="actionEdit_GL_Opening_Balance"/>
+     <addaction name="actionStandard_GL_Accounts"/>
+    </widget>
+    <addaction name="menuChart_of_Accounts"/>
+    <addaction name="menuJournal_Entries"/>
+    <addaction name="menuReportsJV"/>
+    <addaction name="menuSetupJV"/>
+   </widget>
+   <widget class="QMenu" name="menuAdmin">
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="title">
+     <string>Admin</string>
+    </property>
+    <widget class="QMenu" name="menuSetupAdmin">
+     <property name="font">
+      <font>
+       <pointsize>9</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="title">
+      <string>Setup</string>
+     </property>
+     <addaction name="actionManage_Users"/>
+     <addaction name="actionDatabase_Backup"/>
+     <addaction name="actionUser_Log"/>
+     <addaction name="actionFinancial_Year"/>
+    </widget>
+    <addaction name="menuSetupAdmin"/>
+   </widget>
+   <addaction name="menuSales"/>
+   <addaction name="menuInventory"/>
+   <addaction name="menuPurchases"/>
+   <addaction name="menuLedger"/>
+   <addaction name="menuAdmin"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionAdd_Sales_Invoice"/>
+   <addaction name="actionEdit_Sales_Invoice"/>
+   <addaction name="actionAdd_Sales_Return"/>
+   <addaction name="actionEdit_Sales_Return"/>
+   <addaction name="actionAdd_Customer_Receipt"/>
+   <addaction name="actionEdit_Customer_Receipt"/>
+   <addaction name="actionCheque_Parchi_Encashed"/>
+   <addaction name="actionEdit_Cheque_Parchie_Encashed"/>
+   <addaction name="actionAdd_Purchase_Invoice"/>
+   <addaction name="actionEdit_Purchase_Invoice"/>
+   <addaction name="actionAdd_Vendor_Payment"/>
+   <addaction name="actionEdit_Vendor_Payment"/>
+   <addaction name="actionAdd_Cash_Receipt"/>
+   <addaction name="actionEdit_Cash_Receipt"/>
+   <addaction name="actionAdd_Cash_Payment"/>
+   <addaction name="actionEdit_Cash_Payment"/>
+   <addaction name="actionAdd_Journal_Voucher"/>
+   <addaction name="actionEdit_Journal_Voucher"/>
+  </widget>
+  <action name="actionAdd_Customer">
+   <property name="text">
+    <string>Add Customer</string>
+   </property>
+  </action>
+  <action name="actionEdit_Customer">
+   <property name="text">
+    <string>Edit Customer</string>
+   </property>
+  </action>
+  <action name="actionCustomer_List">
+   <property name="text">
+    <string>Customer List</string>
+   </property>
+  </action>
+  <action name="actionAdd_Sales_Invoice">
+   <property name="text">
+    <string>Add Sales Invoice</string>
+   </property>
+   <property name="iconText">
+    <string>SI</string>
+   </property>
+  </action>
+  <action name="actionEdit_Sales_Invoice">
+   <property name="text">
+    <string>Edit Sales Invoice</string>
+   </property>
+   <property name="iconText">
+    <string>ESI</string>
+   </property>
+  </action>
+  <action name="actionPrint_Sales_Invoice">
+   <property name="text">
+    <string>Print Sales Invoice</string>
+   </property>
+  </action>
+  <action name="actionAdd_Sales_Return">
+   <property name="text">
+    <string>Add Sales Return</string>
+   </property>
+   <property name="iconText">
+    <string>SR</string>
+   </property>
+  </action>
+  <action name="actionEdit_Sales_Return">
+   <property name="text">
+    <string>Edit Sales Return</string>
+   </property>
+   <property name="iconText">
+    <string>ESR</string>
+   </property>
+  </action>
+  <action name="actionPrint_Sales_Return">
+   <property name="text">
+    <string>Print Sales Return</string>
+   </property>
+  </action>
+  <action name="actionAdd_Customer_Receipt">
+   <property name="text">
+    <string>Add Customer Receipt</string>
+   </property>
+   <property name="iconText">
+    <string>CR</string>
+   </property>
+  </action>
+  <action name="actionEdit_Customer_Receipt">
+   <property name="text">
+    <string>Edit Customer Receipt</string>
+   </property>
+   <property name="iconText">
+    <string>ECR</string>
+   </property>
+  </action>
+  <action name="actionCustomer_Cash_Receipt">
+   <property name="text">
+    <string>Customer Cash Receipt</string>
+   </property>
+  </action>
+  <action name="actionEdit_Customer_Cash_Receipt">
+   <property name="text">
+    <string>Edit Customer Cash Receipt</string>
+   </property>
+  </action>
+  <action name="actionCheque_Parchi_Encashed">
+   <property name="text">
+    <string>Cheque/Parchie Encashed</string>
+   </property>
+   <property name="iconText">
+    <string>CE</string>
+   </property>
+  </action>
+  <action name="actionEdit_Cheque_Parchie_Encashed">
+   <property name="text">
+    <string>Edit Cheque/Parchie Encashed</string>
+   </property>
+   <property name="iconText">
+    <string>ECE</string>
+   </property>
+  </action>
+  <action name="actionCustomer_Ledger">
+   <property name="text">
+    <string>Customer Ledger</string>
+   </property>
+  </action>
+  <action name="actionAll_Customers_Sales_Recovery">
+   <property name="text">
+    <string>Customers Sales and Recovery</string>
+   </property>
+   <property name="toolTip">
+    <string>Customers Sales and Recovery</string>
+   </property>
+  </action>
+  <action name="actionCustomers_Balance">
+   <property name="text">
+    <string>Customers Balance</string>
+   </property>
+   <property name="toolTip">
+    <string>Customers Balance</string>
+   </property>
+  </action>
+  <action name="actionSummary_of_Invoices">
+   <property name="text">
+    <string>Summary of Invoices</string>
+   </property>
+  </action>
+  <action name="actionCustomer_Payment_Receipt_Report">
+   <property name="text">
+    <string>Customer Payment Receipt Report</string>
+   </property>
+  </action>
+  <action name="actionRecent_Customers">
+   <property name="text">
+    <string>Recent Customers</string>
+   </property>
+  </action>
+  <action name="actionOut_Standing_Cheque_Purchie">
+   <property name="text">
+    <string>Out Standing Cheque/Purchie</string>
+   </property>
+  </action>
+  <action name="actionSummary_of_Invoices_in_Detail">
+   <property name="text">
+    <string>Summary of Invoices in Detail</string>
+   </property>
+  </action>
+  <action name="actionCustomer_Wise_Encash_Payments">
+   <property name="text">
+    <string>Customer Wise Encash Payments</string>
+   </property>
+  </action>
+  <action name="actionCustomer_Annual_Sale">
+   <property name="text">
+    <string>Customer Annual Sale</string>
+   </property>
+  </action>
+  <action name="actionMonth_Wise_Sales_Chart">
+   <property name="text">
+    <string>Month Wise Sales/Recovery Chart</string>
+   </property>
+   <property name="toolTip">
+    <string>Month Wise Sales/Recovery Chart</string>
+   </property>
+  </action>
+  <action name="actionCustomer_s_Item_Wise_Sale">
+   <property name="text">
+    <string>Customer's Item Wise Sale</string>
+   </property>
+  </action>
+  <action name="actionItem_s_Customer_Wise_Sale">
+   <property name="text">
+    <string>Item's Customer Wise Sale</string>
+   </property>
+  </action>
+  <action name="actionCustomer_Wise_Profit_Analysis">
+   <property name="text">
+    <string>Customer Wise Profit Analysis</string>
+   </property>
+  </action>
+  <action name="actionItem_s_Month_Wise_Sales">
+   <property name="text">
+    <string>Item's Month Wise Sales</string>
+   </property>
+  </action>
+  <action name="actionItems_Month_Wise_Sales_Purchases">
+   <property name="text">
+    <string>Item's Month Wise Sales/Purchases</string>
+   </property>
+   <property name="toolTip">
+    <string>Item's Month Wise Sales/Purchases</string>
+   </property>
+  </action>
+  <action name="actionItem_Wise_Sales">
+   <property name="text">
+    <string>Item Wise Sales</string>
+   </property>
+  </action>
+  <action name="actionDay_Wise_Sales_Summary">
+   <property name="text">
+    <string>Day Wise Sales Summary</string>
+   </property>
+  </action>
+  <action name="actionCustomer_Sales_Analysis">
+   <property name="text">
+    <string>Customer Sales Analysis</string>
+   </property>
+  </action>
+  <action name="actionManage_Sales_Man">
+   <property name="text">
+    <string>Manage Sales Man</string>
+   </property>
+  </action>
+  <action name="actionManage_Carrier">
+   <property name="text">
+    <string>Manage Carrier</string>
+   </property>
+  </action>
+  <action name="actionManage_Customer_Groups">
+   <property name="text">
+    <string>Manage Customer Groups</string>
+   </property>
+  </action>
+  <action name="actionManage_Sales_Categories">
+   <property name="text">
+    <string>Manage Sales Categories</string>
+   </property>
+  </action>
+  <action name="actionManage_Units">
+   <property name="text">
+    <string>Manage Units</string>
+   </property>
+  </action>
+  <action name="actionAdd_Customer_Opening_Balance">
+   <property name="text">
+    <string>Add Customer Opening Balance</string>
+   </property>
+  </action>
+  <action name="actionEdit_Customer_Opening_Balance">
+   <property name="text">
+    <string>Edit Customer Opening Balance</string>
+   </property>
+  </action>
+  <action name="actionAR_Standard_GL_Accounts">
+   <property name="text">
+    <string>AR Standard GL Accounts</string>
+   </property>
+   <property name="toolTip">
+    <string>AR Standard GL Accounts</string>
+   </property>
+  </action>
+  <action name="actionAdd_New_Item">
+   <property name="text">
+    <string>Add New Item</string>
+   </property>
+  </action>
+  <action name="actionEdit_Item">
+   <property name="text">
+    <string>Edit Item</string>
+   </property>
+  </action>
+  <action name="actionItems_List">
+   <property name="text">
+    <string>Items List</string>
+   </property>
+  </action>
+  <action name="actionStock_Adjustment">
+   <property name="text">
+    <string>Stock Adjustment</string>
+   </property>
+  </action>
+  <action name="actionEdit_Stock_Adjustment">
+   <property name="text">
+    <string>Edit Stock Adjustment</string>
+   </property>
+  </action>
+  <action name="actionAdd_Initial_Stock">
+   <property name="text">
+    <string>Add Initial Stock</string>
+   </property>
+  </action>
+  <action name="actionEdit_Initial_Stock">
+   <property name="text">
+    <string>Edit Initial Stock</string>
+   </property>
+  </action>
+  <action name="actionStock_Report">
+   <property name="text">
+    <string>Stock Report</string>
+   </property>
+  </action>
+  <action name="actionLocation_Wise_Stock">
+   <property name="text">
+    <string>Location Wise Stock</string>
+   </property>
+  </action>
+  <action name="actionStock_Report_Selling_Price">
+   <property name="text">
+    <string>Stock Report Selling Price</string>
+   </property>
+  </action>
+  <action name="actionStock_Report_Purchase_Price">
+   <property name="text">
+    <string>Stock Report Purchase Price</string>
+   </property>
+  </action>
+  <action name="actionItem_Ledger">
+   <property name="text">
+    <string>Item Ledger</string>
+   </property>
+  </action>
+  <action name="actionManage_Units_2">
+   <property name="text">
+    <string>Manage Units</string>
+   </property>
+  </action>
+  <action name="actionManage_Locations">
+   <property name="text">
+    <string>Manage Locations</string>
+   </property>
+  </action>
+  <action name="actionManage_Item_Category">
+   <property name="text">
+    <string>Manage Item Category</string>
+   </property>
+  </action>
+  <action name="actionManage_Item_Sub_Category">
+   <property name="text">
+    <string>Manage Item Sub Category</string>
+   </property>
+  </action>
+  <action name="actionManage_Item_Brands">
+   <property name="text">
+    <string>Manage Item Brands</string>
+   </property>
+  </action>
+  <action name="actionInvStandard_GL_Accounts">
+   <property name="text">
+    <string>Inv Standard GL Accounts</string>
+   </property>
+   <property name="toolTip">
+    <string>Inv Standard GL Accounts</string>
+   </property>
+  </action>
+  <action name="actionAdd_Vendor">
+   <property name="text">
+    <string>Add Vendor</string>
+   </property>
+  </action>
+  <action name="actionEdit_Vendor">
+   <property name="text">
+    <string>Edit Vendor</string>
+   </property>
+  </action>
+  <action name="actionVendors_List">
+   <property name="text">
+    <string>Vendors List</string>
+   </property>
+  </action>
+  <action name="actionAdd_Purchase_Invoice">
+   <property name="text">
+    <string>Add Purchase Invoice</string>
+   </property>
+   <property name="iconText">
+    <string>PI</string>
+   </property>
+  </action>
+  <action name="actionEdit_Purchase_Invoice">
+   <property name="text">
+    <string>Edit Purchase Invoice</string>
+   </property>
+   <property name="iconText">
+    <string>EPI</string>
+   </property>
+  </action>
+  <action name="actionAdd_Purchase_Return">
+   <property name="text">
+    <string>Add Purchase Return</string>
+   </property>
+  </action>
+  <action name="actionEdit_Purchase_Return">
+   <property name="text">
+    <string>Edit Purchase Return</string>
+   </property>
+  </action>
+  <action name="actionAdd_Vendor_Payment">
+   <property name="text">
+    <string>Add Vendor Payment</string>
+   </property>
+   <property name="iconText">
+    <string>VP</string>
+   </property>
+  </action>
+  <action name="actionEdit_Vendor_Payment">
+   <property name="text">
+    <string>Edit Vendor Payment</string>
+   </property>
+   <property name="iconText">
+    <string>EVP</string>
+   </property>
+  </action>
+  <action name="actionVendor_Ledger">
+   <property name="text">
+    <string>Vendor Ledger</string>
+   </property>
+  </action>
+  <action name="actionPurchase_Invoices_List">
+   <property name="text">
+    <string>Purchase Invoices List</string>
+   </property>
+  </action>
+  <action name="actionPurchase_Detail_Report">
+   <property name="text">
+    <string>Purchase Detail Report</string>
+   </property>
+  </action>
+  <action name="actionItem_Wise_Purchases">
+   <property name="text">
+    <string>Item Wise Purchases</string>
+   </property>
+  </action>
+  <action name="actionPurchase_Return_List">
+   <property name="text">
+    <string>Purchase Return List</string>
+   </property>
+  </action>
+  <action name="actionVendors_Balance_Report">
+   <property name="text">
+    <string>Vendors Balance Report</string>
+   </property>
+  </action>
+  <action name="actionVendor_Payment_Report">
+   <property name="text">
+    <string>Vendor Payment Report</string>
+   </property>
+  </action>
+  <action name="actionManage_Vendor_Groups">
+   <property name="text">
+    <string>Manage Vendor Groups</string>
+   </property>
+  </action>
+  <action name="actionAdd_Vendor_Opening_Balance">
+   <property name="text">
+    <string>Add Vendor Opening Balance</string>
+   </property>
+  </action>
+  <action name="actionEdit_Vendor_Opening_Balance">
+   <property name="text">
+    <string>Edit Vendor Opening Balance</string>
+   </property>
+  </action>
+  <action name="actionAPStandard_GL_Accounts">
+   <property name="text">
+    <string>AP Standard GL Accounts</string>
+   </property>
+   <property name="toolTip">
+    <string>AP Standard GL Accounts</string>
+   </property>
+  </action>
+  <action name="actionAdd_GL_Account">
+   <property name="text">
+    <string>Add GL Account</string>
+   </property>
+  </action>
+  <action name="actionEdit_GL_Account">
+   <property name="text">
+    <string>Edit GL Account</string>
+   </property>
+  </action>
+  <action name="actionChart_of_Accounts_List">
+   <property name="text">
+    <string>Chart of Accounts List</string>
+   </property>
+  </action>
+  <action name="actionAdd_Cash_Receipt">
+   <property name="text">
+    <string>Add Cash Receipt</string>
+   </property>
+   <property name="iconText">
+    <string>CRV</string>
+   </property>
+  </action>
+  <action name="actionEdit_Cash_Receipt">
+   <property name="text">
+    <string>Edit Cash Receipt</string>
+   </property>
+   <property name="iconText">
+    <string>ECRV</string>
+   </property>
+  </action>
+  <action name="actionAdd_Cash_Payment">
+   <property name="text">
+    <string>Add Cash Payment</string>
+   </property>
+   <property name="iconText">
+    <string>CPV</string>
+   </property>
+  </action>
+  <action name="actionEdit_Cash_Payment">
+   <property name="text">
+    <string>Edit Cash Payment</string>
+   </property>
+   <property name="iconText">
+    <string>ECPV</string>
+   </property>
+  </action>
+  <action name="actionAdd_Journal_Voucher">
+   <property name="text">
+    <string>Add Journal Voucher</string>
+   </property>
+   <property name="iconText">
+    <string>JV</string>
+   </property>
+  </action>
+  <action name="actionEdit_Journal_Voucher">
+   <property name="text">
+    <string>Edit Journal Voucher</string>
+   </property>
+   <property name="iconText">
+    <string>EJV</string>
+   </property>
+  </action>
+  <action name="actionAccount_Ledger">
+   <property name="text">
+    <string>Account Ledger</string>
+   </property>
+   <property name="toolTip">
+    <string>Account Ledger</string>
+   </property>
+  </action>
+  <action name="actionDay_Book">
+   <property name="text">
+    <string>Day Book</string>
+   </property>
+  </action>
+  <action name="actionJournal_Reports">
+   <property name="text">
+    <string>Journal Reports</string>
+   </property>
+  </action>
+  <action name="actionAccounts_Balance_Summary">
+   <property name="text">
+    <string>Accounts Balance Summary</string>
+   </property>
+  </action>
+  <action name="actionTrial_Balance">
+   <property name="text">
+    <string>Trial Balance</string>
+   </property>
+  </action>
+  <action name="actionProfit_and_Loss">
+   <property name="text">
+    <string>Profit and Loss</string>
+   </property>
+  </action>
+  <action name="actionBalance_Sheet">
+   <property name="text">
+    <string>Balance Sheet</string>
+   </property>
+  </action>
+  <action name="actionAdd_GL_Opening_Balance">
+   <property name="text">
+    <string>Add GL Opening Balance</string>
+   </property>
+  </action>
+  <action name="actionEdit_GL_Opening_Balance">
+   <property name="text">
+    <string>Edit GL Opening Balance</string>
+   </property>
+  </action>
+  <action name="actionStandard_GL_Accounts">
+   <property name="text">
+    <string>Standard GL Accounts</string>
+   </property>
+  </action>
+  <action name="actionManage_Users">
+   <property name="text">
+    <string>Manage Users</string>
+   </property>
+  </action>
+  <action name="actionDatabase_Backup">
+   <property name="text">
+    <string>Database Backup</string>
+   </property>
+  </action>
+  <action name="actionUser_Log">
+   <property name="text">
+    <string>User Log</string>
+   </property>
+  </action>
+  <action name="actionFinancial_Year">
+   <property name="text">
+    <string>Financial Year</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="erpres.qrc"/>
+ </resources>
+ <connections/>
+</ui>
